@@ -1,0 +1,10 @@
+site_name: Documentació de Desplegament de Servidors
+site_author: Grup A
+site_description: Documentació de Desplegament de Servidors
+
+nav:
+  - Inicio: index.md
+  - NAS: Nas_Jacob.md
+
+theme:
+  name: material
