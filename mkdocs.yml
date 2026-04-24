@@ -1,8 +1,8 @@
 site_name: Infraestructura de Red
 site_author: Grup A
 site_description: Documentación técnica de despliegue de servidores corporativos
-site_dir: site
-docs_dir: docs
+site_dir: docs
+docs_dir: md
 
 theme:
   name: material
