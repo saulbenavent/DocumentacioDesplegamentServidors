@@ -1,0 +1,1032 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica de despliegue de servidores corporativos">
+      
+      
+        <meta name="author" content="Grup A">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Almacenamiento (NAS) - Infraestructura de Red - Proyecto Enterprise</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#servidor-nas-jacob" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Infraestructura de Red - Proyecto Enterprise" class="md-header__button md-logo" aria-label="Infraestructura de Red - Proyecto Enterprise" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Infraestructura de Red - Proyecto Enterprise
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Almacenamiento (NAS)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Administración de Servicios
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Infraestructura de Red - Proyecto Enterprise" class="md-nav__button md-logo" aria-label="Infraestructura de Red - Proyecto Enterprise" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Infraestructura de Red - Proyecto Enterprise
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administración de Servicios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administración de Servicios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Almacenamiento (NAS)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Almacenamiento (NAS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informacion-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Información general
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-instalacion-del-sistema-operativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Instalación del sistema operativo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuracion-de-red-ip-fija" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configuración de red (IP fija)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-instalacion-de-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Instalación de Samba
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creacion-de-la-carpeta-compartida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creación de la carpeta compartida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuracion-de-samba-smbconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configuración de Samba (smb.conf)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-prueba-de-acceso-desde-otro-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Prueba de acceso desde otro equipo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Prueba de acceso desde otro equipo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desde-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desde Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desde-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desde Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resumen-de-comandos-utilizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resumen de comandos utilizados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-capturas-necesarias-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Capturas necesarias (resumen)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informacion-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Información general
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-instalacion-del-sistema-operativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Instalación del sistema operativo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuracion-de-red-ip-fija" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configuración de red (IP fija)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-instalacion-de-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Instalación de Samba
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creacion-de-la-carpeta-compartida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creación de la carpeta compartida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuracion-de-samba-smbconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configuración de Samba (smb.conf)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-prueba-de-acceso-desde-otro-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Prueba de acceso desde otro equipo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Prueba de acceso desde otro equipo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desde-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desde Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desde-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desde Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resumen-de-comandos-utilizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resumen de comandos utilizados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-capturas-necesarias-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Capturas necesarias (resumen)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="servidor-nas-jacob">Servidor NAS (Jacob)</h1>
+<h2 id="informacion-general">Información general</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistema operativo</td>
+<td>Ubuntu Server 22.04 LTS</td>
+</tr>
+<tr>
+<td>IP fija</td>
+<td>192.168.1.50</td>
+</tr>
+<tr>
+<td>Servicio principal</td>
+<td>Samba (SMB/CIFS)</td>
+</tr>
+<tr>
+<td>Carpeta compartida</td>
+<td><code>/srv/nas</code></td>
+</tr>
+<tr>
+<td>Nombre del recurso</td>
+<td><code>nas</code></td>
+</tr>
+<tr>
+<td>Usuario de acceso</td>
+<td><code>nasuser</code></td>
+</tr>
+<tr>
+<td>Grupo de acceso</td>
+<td><code>nasusers</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-instalacion-del-sistema-operativo">1. Instalación del sistema operativo</h2>
+<p>Se ha utilizado <strong>Ubuntu Server 22.04 LTS</strong> como sistema operativo para el servidor NAS por su estabilidad, soporte a largo plazo (hasta 2027) y compatibilidad con Samba.</p>
+<p>La máquina virtual se configuró con los siguientes parámetros en VirtualBox:</p>
+<ul>
+<li>RAM: 2048 MB</li>
+<li>Disco: 20 GB (VDI, asignación dinámica)</li>
+<li>Red: Adaptador en red interna</li>
+<li>Durante la instalación se activó el servidor OpenSSH</li>
+</ul>
+<blockquote>
+<p><strong>Captura requerida:</strong> Pantalla final de instalación de Ubuntu Server mostrando "Installation complete".</p>
+</blockquote>
+<hr />
+<h2 id="2-configuracion-de-red-ip-fija">2. Configuración de red (IP fija)</h2>
+<p>Se asignó una IP estática al servidor editando el archivo de configuración de Netplan:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/netplan/00-installer-config.yaml
+</code></pre></div>
+<p>Contenido del archivo:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enp0s3</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+<span class="w">      </span><span class="nt">addresses</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.50/24</span>
+<span class="w">      </span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.1</span>
+<span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">192.168.1.10</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Aplicar la configuración:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+</code></pre></div>
+<p>Verificar la IP asignada:</p>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>a
+</code></pre></div>
+<blockquote>
+<p><strong>Captura requerida:</strong> Salida del comando <code>ip a</code> mostrando la IP <code>192.168.1.50</code> en la interfaz <code>enp0s3</code>.</p>
+</blockquote>
+<hr />
+<h2 id="3-instalacion-de-samba">3. Instalación de Samba</h2>
+<p>Actualización del sistema e instalación del servicio Samba:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>samba<span class="w"> </span>samba-common-bin<span class="w"> </span>-y
+</code></pre></div>
+<p>Verificar que el servicio está activo:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>smbd
+</code></pre></div>
+<p>Habilitar Samba en el arranque del sistema:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>smbd<span class="w"> </span>nmbd
+</code></pre></div>
+<p>Abrir los puertos necesarios en el firewall:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>samba
+</code></pre></div>
+<blockquote>
+<p><strong>Captura requerida:</strong> Salida de <code>sudo systemctl status smbd</code> mostrando el estado <code>active (running)</code>.</p>
+</blockquote>
+<hr />
+<h2 id="4-creacion-de-la-carpeta-compartida">4. Creación de la carpeta compartida</h2>
+<p>Se creó la carpeta que actuará como almacenamiento compartido del NAS:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/nas
+</code></pre></div>
+<p>Se creó un grupo y un usuario dedicados al acceso NAS:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>groupadd<span class="w"> </span>nasusers
+sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>nasuser<span class="w"> </span>-s<span class="w"> </span>/bin/bash
+sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>nasusers<span class="w"> </span>nasuser
+</code></pre></div>
+<p>Se asignaron los permisos correctos a la carpeta:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>root:nasusers<span class="w"> </span>/srv/nas
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">2770</span><span class="w"> </span>/srv/nas
+</code></pre></div>
+<blockquote>
+<p>El bit <code>setgid (2)</code> garantiza que los archivos creados dentro hereden el grupo <code>nasusers</code>.</p>
+</blockquote>
+<p>Se creó la contraseña Samba para el usuario:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>smbpasswd<span class="w"> </span>-a<span class="w"> </span>nasuser
+</code></pre></div>
+<blockquote>
+<p><strong>Captura requerida:</strong> Salida de <code>ls -la /srv/</code> mostrando los permisos <code>drwxrws---</code> y el grupo <code>nasusers</code> en la carpeta <code>nas</code>.</p>
+</blockquote>
+<hr />
+<h2 id="5-configuracion-de-samba-smbconf">5. Configuración de Samba (<code>smb.conf</code>)</h2>
+<p>Se realizó una copia de seguridad del archivo de configuración original:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/samba/smb.conf<span class="w"> </span>/etc/samba/smb.conf.bak
+</code></pre></div>
+<p>Se editó el archivo de configuración:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/samba/smb.conf
+</code></pre></div>
+<p>Se añadió el siguiente bloque al final del archivo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[nas]</span>
+<span class="w">   </span><span class="na">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Carpeta compartida NAS</span>
+<span class="w">   </span><span class="na">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/srv/nas</span>
+<span class="w">   </span><span class="na">valid users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@nasusers</span>
+<span class="w">   </span><span class="na">read only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">no</span>
+<span class="w">   </span><span class="na">browseable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+<span class="w">   </span><span class="na">create mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0660</span>
+<span class="w">   </span><span class="na">directory mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0770</span>
+<span class="w">   </span><span class="na">force group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">nasusers</span>
+</code></pre></div>
+<p>Se verificó la configuración con la herramienta <code>testparm</code>:</p>
+<div class="highlight"><pre><span></span><code>testparm
+</code></pre></div>
+<p>Se reinició el servicio para aplicar los cambios:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>smbd<span class="w"> </span>nmbd
+</code></pre></div>
+<blockquote>
+<p><strong>Captura requerida:</strong> Salida de <code>testparm</code> sin errores, mostrando el recurso <code>[nas]</code> en la lista de shares.</p>
+</blockquote>
+<hr />
+<h2 id="6-prueba-de-acceso-desde-otro-equipo">6. Prueba de acceso desde otro equipo</h2>
+<h3 id="desde-linux">Desde Linux</h3>
+<p>Listar los recursos compartidos del servidor:</p>
+<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span>-L<span class="w"> </span>//192.168.1.50<span class="w"> </span>-U<span class="w"> </span>nasuser
+</code></pre></div>
+<p>Conectarse a la carpeta compartida:</p>
+<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span>//192.168.1.50/nas<span class="w"> </span>-U<span class="w"> </span>nasuser
+</code></pre></div>
+<p>Montar la unidad de forma permanente:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>cifs<span class="w"> </span>//192.168.1.50/nas<span class="w"> </span>/mnt/nas<span class="w"> </span>-o<span class="w"> </span><span class="nv">user</span><span class="o">=</span>nasuser
+</code></pre></div>
+<h3 id="desde-windows">Desde Windows</h3>
+<p>Acceder desde el Explorador de archivos escribiendo en la barra de direcciones:</p>
+<div class="highlight"><pre><span></span><code>\\192.168.1.50\nas
+</code></pre></div>
+<blockquote>
+<p><strong>Captura requerida:</strong> Acceso exitoso al recurso compartido <code>nas</code> desde otro equipo de la red (puede ser desde la máquina del servidor web o desde Windows), mostrando la carpeta accesible y que es posible crear/leer archivos.</p>
+</blockquote>
+<hr />
+<h2 id="7-resumen-de-comandos-utilizados">7. Resumen de comandos utilizados</h2>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sudo apt install samba samba-common-bin -y</code></td>
+<td>Instala Samba</td>
+</tr>
+<tr>
+<td><code>sudo mkdir -p /srv/nas</code></td>
+<td>Crea la carpeta compartida</td>
+</tr>
+<tr>
+<td><code>sudo groupadd nasusers</code></td>
+<td>Crea el grupo de acceso</td>
+</tr>
+<tr>
+<td><code>sudo useradd -m nasuser</code></td>
+<td>Crea el usuario NAS</td>
+</tr>
+<tr>
+<td><code>sudo chmod 2770 /srv/nas</code></td>
+<td>Asigna permisos con setgid</td>
+</tr>
+<tr>
+<td><code>sudo smbpasswd -a nasuser</code></td>
+<td>Crea contraseña Samba</td>
+</tr>
+<tr>
+<td><code>testparm</code></td>
+<td>Verifica la configuración</td>
+</tr>
+<tr>
+<td><code>sudo systemctl restart smbd nmbd</code></td>
+<td>Reinicia Samba</td>
+</tr>
+<tr>
+<td><code>smbclient //192.168.1.50/nas -U nasuser</code></td>
+<td>Prueba el acceso desde Linux</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-capturas-necesarias-resumen">8. Capturas necesarias (resumen)</h2>
+<ul>
+<li>[ ] Instalación de Ubuntu Server completada</li>
+<li>[ ] Salida de <code>ip a</code> con IP estática <code>192.168.1.50</code></li>
+<li>[ ] <code>systemctl status smbd</code> en estado <code>active (running)</code></li>
+<li>[ ] <code>ls -la /srv/</code> mostrando permisos de la carpeta <code>nas</code></li>
+<li>[ ] Salida de <code>testparm</code> sin errores</li>
+<li>[ ] Acceso exitoso desde otro equipo de la red</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
