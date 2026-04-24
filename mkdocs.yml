@@ -1,21 +1,20 @@
-# 1. Configuración General
-site_name: Infraestructura de Red - Proyecto Enterprise
+site_name: Infraestructura de Red
 site_author: Grup A
 site_description: Documentación técnica de despliegue de servidores corporativos
+site_dir: site
+docs_dir: docs
 
-# 2. Configuración Estética (Tema Material)
 theme:
   name: material
   language: es
   features:
-    - navigation.tabs          # Menú horizontal superior
-    - navigation.sections      # Secciones laterales organizadas
-    - navigation.expand        # Expandir submenús automáticamente
-    - navigation.top           # Botón de volver arriba
-    - search.suggest           # Sugerencias en la búsqueda
-    - content.code.copy        # Botón para copiar código
+    - navigation.tabs          
+    - navigation.sections      
+    - navigation.expand        
+    - navigation.top           
+    - search.suggest           
+    - content.code.copy        
   palette: 
-    # Modo claro/oscuro automático según el sistema
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: red
@@ -31,7 +30,6 @@ theme:
         icon: material/brightness-4
         name: Cambiar a modo claro
 
-# 3. Estructura de Navegación
 nav:
   - Inicio: index.md
   - Administración de Servicios:
@@ -41,10 +39,9 @@ nav:
 #  - Ciberseguridad: 
 #    - Hardening y Firewall: seguridad_blai.md
 
-# 4. Extensiones de Markdown (Para que se vea mejor el contenido)
 markdown_extensions:
-  - admonition          # Cuadros de aviso (notas, peligros, etc.)
-  - pymdownx.details    # Secciones desplegables
-  - pymdownx.superfences # Bloques de código avanzados
-  - tables              # Tablas mejoradas
-  - attr_list           # Permite añadir estilos CSS directamente
+  - admonition          
+  - pymdownx.details    
+  - pymdownx.superfences
+  - tables              
+  - attr_list           
