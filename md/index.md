@@ -43,10 +43,10 @@ Hemos organizado el desarrollo en tres fases críticas para asegurar la entrega 
 ## 1.4 Contenido de la Documentación
 Navega a través del menú lateral para consultar los detalles específicos de cada módulo:
 
-* **[Servidores](servidores.md):** Guía de instalación y configuración de Web, DHCP y DNS.
+* **[Servidores](Red_Alberto.md):** Guía de instalación y configuración de Web, DHCP y DNS.
 * **[Almacenamiento (NAS)](Nas_Jacob.md):** Estructura de carpetas compartidas y políticas de acceso.
-* **[Seguridad y Hardening](seguridad.md):** Auditoría de puertos, reglas de firewall y protección de fuerza bruta.
-* **[Gestión de Usuarios](usuarios.md):** Matriz de permisos y perfiles administrativos.
+* **[Seguridad y Hardening](Seguridad_Blai.md):** Auditoría de puertos, reglas de firewall y protección de fuerza bruta.
+* **[Gestión de Usuarios](Web_Samu.md):** Matriz de permisos y perfiles administrativos.
 
 ---
 
