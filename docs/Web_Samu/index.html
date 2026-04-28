@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../Red_Alberto/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../Seguridad_Blai/">
+        <link rel="next" href="../Red_Alberto/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Almacenamiento (NAS) - Infraestructura de Red</title>
+        <title>Servidor Web - Infraestructura de Red</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#servidor-nas-jacob" class="md-skip">
+        <a href="#configuracion-completa-de-un-servidor-web-con-apache-y-php" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Almacenamiento (NAS)
+              Servidor Web
             
           </span>
         </div>
@@ -236,7 +236,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../Web_Samu/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -389,10 +389,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Web_Samu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servidor Web
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -408,6 +435,265 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guia-detallada-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guía detallada paso a paso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-instalacion-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Instalación de Apache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Instalación de Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-a-seguir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos a seguir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-esperado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instalacion-de-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Instalación de PHP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Instalación de PHP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-a-seguir_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos a seguir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-esperado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-crear-una-pagina-web-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Crear una página web de prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Crear una página web de prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-a-seguir_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos a seguir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-esperado_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-prueba-de-acceso-desde-el-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Prueba de acceso desde el navegador
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Prueba de acceso desde el navegador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-a-seguir_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos a seguir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-esperado_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-comprobaciones-adicionales-recomendadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Comprobaciones adicionales recomendadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Comprobaciones adicionales recomendadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-que-apache-escucha-en-el-puerto-80" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificar que Apache escucha en el puerto 80
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobar-el-estado-del-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobar el estado del firewall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-apache-tras-cambios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reiniciar Apache tras cambios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist final
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notas-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notas importantes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -445,37 +731,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Almacenamiento (NAS)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Nas_Jacob/" class="md-nav__link">
         
   
   
@@ -491,153 +750,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#informacion-general" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Información general
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-instalacion-del-sistema-operativo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Instalación del sistema operativo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-configuracion-de-red-ip-fija" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Configuración de red (IP fija)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-instalacion-de-samba" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Instalación de Samba
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-creacion-de-la-carpeta-compartida" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Creación de la carpeta compartida
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-configuracion-de-samba-smbconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Configuración de Samba (smb.conf)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-prueba-de-acceso-desde-otro-equipo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Prueba de acceso desde otro equipo
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Prueba de acceso desde otro equipo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desde-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Desde Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#desde-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Desde Windows
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-resumen-de-comandos-utilizados" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Resumen de comandos utilizados
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-capturas-necesarias-resumen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Capturas necesarias (resumen)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -766,10 +878,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#informacion-general" class="md-nav__link">
+  <a href="#guia-detallada-paso-a-paso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Información general
+        Guía detallada paso a paso
       
     </span>
   </a>
@@ -777,77 +889,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-instalacion-del-sistema-operativo" class="md-nav__link">
+  <a href="#1-instalacion-de-apache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Instalación del sistema operativo
+        1. Instalación de Apache
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-configuracion-de-red-ip-fija" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Configuración de red (IP fija)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-instalacion-de-samba" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Instalación de Samba
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-creacion-de-la-carpeta-compartida" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Creación de la carpeta compartida
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-configuracion-de-samba-smbconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Configuración de Samba (smb.conf)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-prueba-de-acceso-desde-otro-equipo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Prueba de acceso desde otro equipo
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Prueba de acceso desde otro equipo">
+    <nav class="md-nav" aria-label="1. Instalación de Apache">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#desde-linux" class="md-nav__link">
+  <a href="#pasos-a-seguir" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Desde Linux
+        Pasos a seguir
       
     </span>
   </a>
@@ -855,10 +912,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#desde-windows" class="md-nav__link">
+  <a href="#resultado-esperado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Desde Windows
+        Resultado esperado
       
     </span>
   </a>
@@ -871,10 +928,177 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-resumen-de-comandos-utilizados" class="md-nav__link">
+  <a href="#2-instalacion-de-php" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Resumen de comandos utilizados
+        2. Instalación de PHP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Instalación de PHP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-a-seguir_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos a seguir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-esperado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-crear-una-pagina-web-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Crear una página web de prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Crear una página web de prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-a-seguir_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos a seguir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-esperado_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-prueba-de-acceso-desde-el-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Prueba de acceso desde el navegador
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Prueba de acceso desde el navegador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-a-seguir_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos a seguir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-esperado_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-comprobaciones-adicionales-recomendadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Comprobaciones adicionales recomendadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Comprobaciones adicionales recomendadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-que-apache-escucha-en-el-puerto-80" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificar que Apache escucha en el puerto 80
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobar-el-estado-del-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobar el estado del firewall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-apache-tras-cambios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reiniciar Apache tras cambios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist final
       
     </span>
   </a>
@@ -882,10 +1106,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-capturas-necesarias-resumen" class="md-nav__link">
+  <a href="#notas-importantes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Capturas necesarias (resumen)
+        Notas importantes
       
     </span>
   </a>
@@ -909,230 +1133,140 @@
 
 
 
-<h1 id="servidor-nas-jacob">Servidor NAS (Jacob)</h1>
-<h2 id="informacion-general">Información general</h2>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sistema operativo</td>
-<td>Ubuntu Server 22.04 LTS</td>
-</tr>
-<tr>
-<td>IP fija</td>
-<td>192.168.1.50</td>
-</tr>
-<tr>
-<td>Servicio principal</td>
-<td>Samba (SMB/CIFS)</td>
-</tr>
-<tr>
-<td>Carpeta compartida</td>
-<td><code>/srv/nas</code></td>
-</tr>
-<tr>
-<td>Nombre del recurso</td>
-<td><code>nas</code></td>
-</tr>
-<tr>
-<td>Usuario de acceso</td>
-<td><code>nasuser</code></td>
-</tr>
-<tr>
-<td>Grupo de acceso</td>
-<td><code>nasusers</code></td>
-</tr>
-</tbody>
-</table>
+<h1 id="configuracion-completa-de-un-servidor-web-con-apache-y-php">Configuración Completa de un Servidor Web con Apache y PHP</h1>
+<h2 id="guia-detallada-paso-a-paso">Guía detallada paso a paso</h2>
+<p>Esta guía explica cómo instalar, configurar y verificar un servidor web funcional utilizando <strong>Apache</strong> y <strong>PHP</strong> en un sistema basado en Debian/Ubuntu.<br />
+Incluye comandos, explicaciones, comprobaciones y notas importantes para evitar errores comunes.</p>
 <hr />
-<h2 id="1-instalacion-del-sistema-operativo">1. Instalación del sistema operativo</h2>
-<p>Se ha utilizado <strong>Ubuntu Server 22.04 LTS</strong> como sistema operativo para el servidor NAS por su estabilidad, soporte a largo plazo (hasta 2027) y compatibilidad con Samba.</p>
-<p>La máquina virtual se configuró con los siguientes parámetros en VirtualBox:</p>
-<ul>
-<li>RAM: 2048 MB</li>
-<li>Disco: 20 GB (VDI, asignación dinámica)</li>
-<li>Red: Adaptador en red interna</li>
-<li>Durante la instalación se activó el servidor OpenSSH</li>
-</ul>
-<blockquote>
-<p><strong>Captura requerida:</strong> Pantalla final de instalación de Ubuntu Server mostrando "Installation complete".</p>
-</blockquote>
-<hr />
-<h2 id="2-configuracion-de-red-ip-fija">2. Configuración de red (IP fija)</h2>
-<p>Se asignó una IP estática al servidor editando el archivo de configuración de Netplan:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/netplan/00-installer-config.yaml
+<h2 id="1-instalacion-de-apache">1. Instalación de Apache</h2>
+<p>Apache será el servidor encargado de atender las peticiones HTTP.</p>
+<h3 id="pasos-a-seguir">Pasos a seguir</h3>
+<ol>
+<li>Actualizar los repositorios del sistema:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 </code></pre></div>
-<p>Contenido del archivo:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">enp0s3</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
-<span class="w">      </span><span class="nt">addresses</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.50/24</span>
-<span class="w">      </span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.1</span>
-<span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">192.168.1.10</span><span class="p p-Indicator">]</span>
-</code></pre></div>
-<p>Aplicar la configuración:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
-</code></pre></div>
-<p>Verificar la IP asignada:</p>
-<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>a
-</code></pre></div>
-<blockquote>
-<p><strong>Captura requerida:</strong> Salida del comando <code>ip a</code> mostrando la IP <code>192.168.1.50</code> en la interfaz <code>enp0s3</code>.</p>
-</blockquote>
-<hr />
-<h2 id="3-instalacion-de-samba">3. Instalación de Samba</h2>
-<p>Actualización del sistema e instalación del servicio Samba:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>samba<span class="w"> </span>samba-common-bin<span class="w"> </span>-y
-</code></pre></div>
+<ol>
+<li>
+<p>Instalar Apache:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
+</code></pre></div></p>
+</li>
+<li>
 <p>Verificar que el servicio está activo:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>smbd
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
 </code></pre></div>
-<p>Habilitar Samba en el arranque del sistema:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>smbd<span class="w"> </span>nmbd
+<ol>
+<li>(Opcional) Habilitar Apache para que arranque automáticamente:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>apache2
 </code></pre></div>
-<p>Abrir los puertos necesarios en el firewall:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>samba
-</code></pre></div>
-<blockquote>
-<p><strong>Captura requerida:</strong> Salida de <code>sudo systemctl status smbd</code> mostrando el estado <code>active (running)</code>.</p>
-</blockquote>
-<hr />
-<h2 id="4-creacion-de-la-carpeta-compartida">4. Creación de la carpeta compartida</h2>
-<p>Se creó la carpeta que actuará como almacenamiento compartido del NAS:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/nas
-</code></pre></div>
-<p>Se creó un grupo y un usuario dedicados al acceso NAS:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>groupadd<span class="w"> </span>nasusers
-sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>nasuser<span class="w"> </span>-s<span class="w"> </span>/bin/bash
-sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>nasusers<span class="w"> </span>nasuser
-</code></pre></div>
-<p>Se asignaron los permisos correctos a la carpeta:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>root:nasusers<span class="w"> </span>/srv/nas
-sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">2770</span><span class="w"> </span>/srv/nas
-</code></pre></div>
-<blockquote>
-<p>El bit <code>setgid (2)</code> garantiza que los archivos creados dentro hereden el grupo <code>nasusers</code>.</p>
-</blockquote>
-<p>Se creó la contraseña Samba para el usuario:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>smbpasswd<span class="w"> </span>-a<span class="w"> </span>nasuser
-</code></pre></div>
-<blockquote>
-<p><strong>Captura requerida:</strong> Salida de <code>ls -la /srv/</code> mostrando los permisos <code>drwxrws---</code> y el grupo <code>nasusers</code> en la carpeta <code>nas</code>.</p>
-</blockquote>
-<hr />
-<h2 id="5-configuracion-de-samba-smbconf">5. Configuración de Samba (<code>smb.conf</code>)</h2>
-<p>Se realizó una copia de seguridad del archivo de configuración original:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/samba/smb.conf<span class="w"> </span>/etc/samba/smb.conf.bak
-</code></pre></div>
-<p>Se editó el archivo de configuración:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/samba/smb.conf
-</code></pre></div>
-<p>Se añadió el siguiente bloque al final del archivo:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[nas]</span>
-<span class="w">   </span><span class="na">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Carpeta compartida NAS</span>
-<span class="w">   </span><span class="na">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/srv/nas</span>
-<span class="w">   </span><span class="na">valid users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@nasusers</span>
-<span class="w">   </span><span class="na">read only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">no</span>
-<span class="w">   </span><span class="na">browseable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-<span class="w">   </span><span class="na">create mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0660</span>
-<span class="w">   </span><span class="na">directory mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0770</span>
-<span class="w">   </span><span class="na">force group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">nasusers</span>
-</code></pre></div>
-<p>Se verificó la configuración con la herramienta <code>testparm</code>:</p>
-<div class="highlight"><pre><span></span><code>testparm
-</code></pre></div>
-<p>Se reinició el servicio para aplicar los cambios:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>smbd<span class="w"> </span>nmbd
-</code></pre></div>
-<blockquote>
-<p><strong>Captura requerida:</strong> Salida de <code>testparm</code> sin errores, mostrando el recurso <code>[nas]</code> en la lista de shares.</p>
-</blockquote>
-<hr />
-<h2 id="6-prueba-de-acceso-desde-otro-equipo">6. Prueba de acceso desde otro equipo</h2>
-<h3 id="desde-linux">Desde Linux</h3>
-<p>Listar los recursos compartidos del servidor:</p>
-<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span>-L<span class="w"> </span>//192.168.1.50<span class="w"> </span>-U<span class="w"> </span>nasuser
-</code></pre></div>
-<p>Conectarse a la carpeta compartida:</p>
-<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span>//192.168.1.50/nas<span class="w"> </span>-U<span class="w"> </span>nasuser
-</code></pre></div>
-<p>Montar la unidad de forma permanente:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>cifs<span class="w"> </span>//192.168.1.50/nas<span class="w"> </span>/mnt/nas<span class="w"> </span>-o<span class="w"> </span><span class="nv">user</span><span class="o">=</span>nasuser
-</code></pre></div>
-<h3 id="desde-windows">Desde Windows</h3>
-<p>Acceder desde el Explorador de archivos escribiendo en la barra de direcciones:</p>
-<div class="highlight"><pre><span></span><code>\\192.168.1.50\nas
-</code></pre></div>
-<blockquote>
-<p><strong>Captura requerida:</strong> Acceso exitoso al recurso compartido <code>nas</code> desde otro equipo de la red (puede ser desde la máquina del servidor web o desde Windows), mostrando la carpeta accesible y que es posible crear/leer archivos.</p>
-</blockquote>
-<hr />
-<h2 id="7-resumen-de-comandos-utilizados">7. Resumen de comandos utilizados</h2>
-<table>
-<thead>
-<tr>
-<th>Comando</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>sudo apt install samba samba-common-bin -y</code></td>
-<td>Instala Samba</td>
-</tr>
-<tr>
-<td><code>sudo mkdir -p /srv/nas</code></td>
-<td>Crea la carpeta compartida</td>
-</tr>
-<tr>
-<td><code>sudo groupadd nasusers</code></td>
-<td>Crea el grupo de acceso</td>
-</tr>
-<tr>
-<td><code>sudo useradd -m nasuser</code></td>
-<td>Crea el usuario NAS</td>
-</tr>
-<tr>
-<td><code>sudo chmod 2770 /srv/nas</code></td>
-<td>Asigna permisos con setgid</td>
-</tr>
-<tr>
-<td><code>sudo smbpasswd -a nasuser</code></td>
-<td>Crea contraseña Samba</td>
-</tr>
-<tr>
-<td><code>testparm</code></td>
-<td>Verifica la configuración</td>
-</tr>
-<tr>
-<td><code>sudo systemctl restart smbd nmbd</code></td>
-<td>Reinicia Samba</td>
-</tr>
-<tr>
-<td><code>smbclient //192.168.1.50/nas -U nasuser</code></td>
-<td>Prueba el acceso desde Linux</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="8-capturas-necesarias-resumen">8. Capturas necesarias (resumen)</h2>
+<h3 id="resultado-esperado">Resultado esperado</h3>
 <ul>
-<li>[ ] Instalación de Ubuntu Server completada</li>
-<li>[ ] Salida de <code>ip a</code> con IP estática <code>192.168.1.50</code></li>
-<li>[ ] <code>systemctl status smbd</code> en estado <code>active (running)</code></li>
-<li>[ ] <code>ls -la /srv/</code> mostrando permisos de la carpeta <code>nas</code></li>
-<li>[ ] Salida de <code>testparm</code> sin errores</li>
-<li>[ ] Acceso exitoso desde otro equipo de la red</li>
+<li>Apache instalado correctamente  </li>
+<li>Servicio activo y escuchando en el puerto 80  </li>
+<li>Acceso disponible desde el navegador  </li>
+</ul>
+<hr />
+<h2 id="2-instalacion-de-php">2. Instalación de PHP</h2>
+<p>PHP permitirá ejecutar páginas dinámicas y procesar scripts del lado del servidor.</p>
+<h3 id="pasos-a-seguir_1">Pasos a seguir</h3>
+<ol>
+<li>Instalar PHP y el módulo necesario para integrarlo con Apache:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php<span class="w"> </span>libapache2-mod-php<span class="w"> </span>-y
+</code></pre></div>
+<ol>
+<li>Verificar la versión instalada:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>-v
+</code></pre></div>
+<ol>
+<li>(Opcional) Instalar módulos adicionales de PHP:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php-mysql<span class="w"> </span>php-cli<span class="w"> </span>php-curl<span class="w"> </span>php-zip<span class="w"> </span>php-xml<span class="w"> </span>php-mbstring<span class="w"> </span>-y
+</code></pre></div>
+<h3 id="resultado-esperado_1">Resultado esperado</h3>
+<ul>
+<li>PHP instalado y funcionando  </li>
+<li>Apache capaz de interpretar archivos <code>.php</code>  </li>
+<li>Módulos adicionales disponibles si se instalaron  </li>
+</ul>
+<hr />
+<h2 id="3-crear-una-pagina-web-de-prueba">3. Crear una página web de prueba</h2>
+<p>Para confirmar que PHP funciona correctamente, se creará un archivo de prueba.</p>
+<h3 id="pasos-a-seguir_2">Pasos a seguir</h3>
+<ol>
+<li>Crear el archivo <code>index.php</code> en el directorio raíz del servidor:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/var/www/html/index.php
+</code></pre></div>
+<ol>
+<li>Añadir el siguiente contenido:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>&lt;?php
+phpinfo<span class="o">()</span><span class="p">;</span>
+?&gt;
+</code></pre></div>
+<ol>
+<li>Guardar y cerrar el archivo.</li>
+</ol>
+<h3 id="resultado-esperado_2">Resultado esperado</h3>
+<ul>
+<li>Archivo <code>index.php</code> creado  </li>
+<li>El servidor ejecuta código PHP sin errores  </li>
+</ul>
+<hr />
+<h2 id="4-prueba-de-acceso-desde-el-navegador">4. Prueba de acceso desde el navegador</h2>
+<h3 id="pasos-a-seguir_3">Pasos a seguir</h3>
+<ol>
+<li>Abrir un navegador web.</li>
+<li>Acceder a:</li>
+<li><code>http://localhost</code>
+   o</li>
+<li><code>http://IP_DEL_SERVIDOR</code></li>
+<li>Comprobar que aparece la página de información de PHP.</li>
+</ol>
+<h3 id="resultado-esperado_3">Resultado esperado</h3>
+<ul>
+<li>Se muestra la página generada por <code>phpinfo()</code>  </li>
+<li>Apache y PHP funcionando correctamente  </li>
+</ul>
+<hr />
+<h2 id="5-comprobaciones-adicionales-recomendadas">5. Comprobaciones adicionales recomendadas</h2>
+<h3 id="verificar-que-apache-escucha-en-el-puerto-80">Verificar que Apache escucha en el puerto 80</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ss<span class="w"> </span>-tulnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>apache
+</code></pre></div>
+<h3 id="comprobar-el-estado-del-firewall">Comprobar el estado del firewall</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status
+</code></pre></div>
+<p>Si Apache está bloqueado:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Apache&#39;</span>
+</code></pre></div>
+<h3 id="reiniciar-apache-tras-cambios">Reiniciar Apache tras cambios</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+<hr />
+<h2 id="checklist-final">Checklist final</h2>
+<ul>
+<li>[ ] Apache instalado  </li>
+<li>[ ] PHP instalado correctamente  </li>
+<li>[ ] Archivo <code>index.php</code> creado  </li>
+<li>[ ] Página accesible desde navegador  </li>
+<li>[ ] Firewall configurado  </li>
+<li>[ ] Servicio Apache activo  </li>
+</ul>
+<hr />
+<h2 id="notas-importantes">Notas importantes</h2>
+<ul>
+<li>Si no puedes acceder al servidor, revisa:</li>
+<li>La IP del equipo  </li>
+<li>El firewall  </li>
+<li>Que Apache esté en ejecución  </li>
+<li>Si editas archivos de configuración, recuerda reiniciar Apache.  </li>
+<li>El archivo <code>index.php</code> debe tener permisos adecuados.</li>
 </ul>
 
 

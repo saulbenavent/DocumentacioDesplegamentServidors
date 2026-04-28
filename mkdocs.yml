@@ -33,11 +33,11 @@ theme:
 nav:
   - Inicio: index.md
   - Administración de Servicios:
-#    - Servidor Web: Web_Samu.md
+    - Servidor Web: Web_Samu.md
     - Red (DHCP + DNS): Red_Alberto.md 
     - Almacenamiento (NAS): Nas_Jacob.md
-#  - Ciberseguridad: 
-#    - Hardening y Firewall: Seguridad_Blai.md
+  - Ciberseguridad: 
+    - Hardening y Firewall: Seguridad_Blai.md
 
 markdown_extensions:
   - admonition          
